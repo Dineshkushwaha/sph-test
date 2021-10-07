@@ -1,0 +1,56 @@
+<?php
+
+
+use \Drupal\node\Entity\Node;
+use \Drupal\file\Entity\File;
+
+/**
+ * Implements hook_install().
+ */
+function my_module_install() {
+
+    global $base_url;
+
+	$product_details = [
+                         ['name' => 'Product 1', 
+                          'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s',
+                          'link' => 'https://www.lipsum.com/',
+                          'image' => 'image1.jpg',
+                          'alias' => '/product/product-1',
+                         ],
+                         ['name' => 'Product 2', 
+                          'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s',
+                          'link' => 'https://www.google.co.in/',
+                          'image' => 'image2.jpg',
+                          'alias' => '/product/product-2',
+                         ],
+                         ['name' => 'Unicorn Iron on patch', 
+                          'description' => 'Size is approx. 3-3/8" x 4" (8.5cm x 10.16cm). High quality, detailed embroidery applique. Can be sewn or ironed on. Great for hats, bags, clothing and more!. Or you could also just stick it to your forehead!',
+                          'link' => 'https://github.com/Dineshkushwaha/sph-test',
+                          'image' => 'unicornpatch.jpg',
+                          'alias' => '/product/unicorn-iron-on-patch',
+                         ],
+	                   ];
+
+    $module_get_handler = \Drupal::service('module_handler');
+    $module_get_path = $module_get_handler->getModule('my_module')->getPath();
+
+    foreach ($product_details as $key => $value) {
+    	$data = file_get_contents($base_url.'/'.$module_get_path.'/assets/images/'.$value['image']);
+		$file = file_save_data($data, "public://".$value['image'], FILE_EXISTS_REPLACE);
+		 
+		// Create node object and save it.
+		$node = Node::create([
+		  'type'=> 'product',
+		  'title'=> $value['name'],
+		  'body'=> $value['description'],
+		  'field_app_purchase_link'=> $value['link'],
+	      'field_app_image'=> [
+	          'target_id' => $file->id(),
+	          'alt' => 'product',
+	      ],
+		]);
+		$node->set('path', $value['alias']);
+		$node->save();
+    }
+}
