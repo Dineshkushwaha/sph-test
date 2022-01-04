@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - jugaad_product
+    - node
+  theme:
+    - bartik
+id: productqrblock
+theme: bartik
+region: sidebar_second
+weight: 0
+provider: null
+plugin: jugaad_product_qr_link
+settings:
+  id: jugaad_product_qr_link
+  label: 'Scan here on your mobile'
+  provider: jugaad_product
+  label_display: visible
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      product: product
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

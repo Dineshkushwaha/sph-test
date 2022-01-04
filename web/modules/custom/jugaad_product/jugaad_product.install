@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for jugaad_product.
+ */
+
+/**
+ * Update the home page.
+ */
+function jugaad_product_install() {
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('page.front', '/product-listing-page')
+    ->save();
+}

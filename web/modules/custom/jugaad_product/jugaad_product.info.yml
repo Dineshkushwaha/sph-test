@@ -1,0 +1,16 @@
+name: 'Jugaad Product'
+type: module
+description: 'Enables jugaad product.'
+core_version_requirement: ^8 || ^9
+package: 'Jugaad - Content'
+dependencies:
+  - drupal:datetime
+  - drupal:image
+  - drupal:field
+  - drupal:path
+  - drupal:text
+  - drupal:node
+  - drupal:link
+  - drupal:user
+  - drupal:block
+  - drupal:views
