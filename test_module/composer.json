@@ -1,0 +1,9 @@
+{
+    "name": "drupal/test_module",
+    "description": "Test module for QR Code",
+    "type": "drupal-custom-module",
+    "require": {
+        "endroid/qr-code": "^4.3"
+    },
+    "license": "GPL-2.0"
+}

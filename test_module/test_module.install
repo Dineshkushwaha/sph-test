@@ -1,0 +1,46 @@
+<?php
+use \Drupal\node\Entity\Node;
+use \Drupal\file\Entity\File;
+use \Drupal\Core\File\FileSystemInterface;
+
+function test_module_install() {
+
+    global $base_url;
+
+	$product_list = [
+                     ['name' => 'Product Title 1', 
+                      'description' => 'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+                      'link' => 'https://www.klipfolio.com',
+                      'image' => 'product_image1.jpg',
+                      'alias' => '/product/product-1',
+                     ],
+                     ['name' => 'Unicorn Iron on patch', 
+                      'description' => 'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+                      'link' => 'https://moz.com',
+                      'image' => 'unicorn_patch.jpg',
+                      'alias' => '/product/unicorn-iron-on-patch',
+                     ],
+	               ];
+
+    $module_handler = \Drupal::service('module_handler');
+    $module_get_path = $module_handler->getModule('test_module')->getPath();
+
+    foreach ($product_list as $key => $value) {
+    	$data = file_get_contents($base_url.'/'.$module_get_path.'/assets/images/'.$value['image']);
+		$file = file_save_data($data, "public://".$value['image'], FileSystemInterface::EXISTS_REPLACE);
+		 
+		//Save Node.
+		$node = Node::create([
+		  'type'=> 'product',
+		  'title'=> $value['name'],
+		  'body'=> $value['description'],
+		  'field_app_purchase_link'=> $value['link'],
+	      'field_product_image'=> [
+	          'target_id' => $file->id(),
+	          'alt' => 'image',
+	      ],
+		]);
+		$node->set('path', $value['alias']);
+		$node->save();
+    }
+}

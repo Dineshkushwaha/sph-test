@@ -1,0 +1,28 @@
+uuid: 5491ab26-f072-4ce2-b141-9ac57f1a4ed8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - test_module
+  theme:
+    - bartik
+id: qrcodeblock
+theme: bartik
+region: sidebar_second
+weight: 0
+provider: null
+plugin: qr_code_block
+settings:
+  id: qr_code_block
+  label: 'QR code block'
+  provider: test_module
+  label_display: visible
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      product: product
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

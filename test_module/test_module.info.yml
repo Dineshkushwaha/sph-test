@@ -1,0 +1,9 @@
+name: 'Test Module'
+description: 'Custom code to add QRCode Block'
+core: 8.x
+package: Custom
+type: module
+dependencies:
+  - drupal:block
+  - drupal:image
+  - drupal:link
