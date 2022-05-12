@@ -1,0 +1,4 @@
+services:
+  ws.qr_generator:
+    class: Drupal\ws\GenerateQr
+    arguments: ['qr_content']
