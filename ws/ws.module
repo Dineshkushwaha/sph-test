@@ -1,0 +1,14 @@
+<?php
+
+/**
+* Implements hook_theme()
+**/
+function ws_theme($existing, $type, $theme, $path) {
+  return [
+    'ws_qr' => [
+      'variables' => [
+        'qr_path' => '',
+      ],
+    ],
+  ];
+}
