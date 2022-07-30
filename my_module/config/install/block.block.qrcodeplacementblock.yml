@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - my_module
+    - node
+  theme:
+    - bartik
+id: qrcodeplacementblock
+theme: bartik
+region: sidebar_second
+weight: 0
+provider: null
+plugin: qr_code_placement_block
+settings:
+  id: qr_code_placement_block
+  label: 'QR code placement block'
+  provider: my_module
+  label_display: visible
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      product: product
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
