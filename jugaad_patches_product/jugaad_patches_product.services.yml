@@ -1,0 +1,5 @@
+services:
+  jugaad_patches_product.qr_code_generator:
+    class: Drupal\jugaad_patches_product\Services\QrCodeGenerator
+    arguments: ['data']
+

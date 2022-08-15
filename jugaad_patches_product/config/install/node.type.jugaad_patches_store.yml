@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - node
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Jugaad Patches Store - Product'
+type: jugaad_patches_store
+description: 'This is the store for selling all your ideas in the form of products.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

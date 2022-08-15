@@ -1,0 +1,7 @@
+name: Jugaad Patches Store - Product
+type: module
+description: 'To setup content type for you to manage jugaad patches stores products'
+package: Jugaad Patches Store
+core_version_requirement: ^9
+dependencies:
+  - drupal:node

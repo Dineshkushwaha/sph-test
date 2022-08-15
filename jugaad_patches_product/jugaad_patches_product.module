@@ -1,0 +1,22 @@
+<?php
+
+/**
+* Implements hook_theme()
+**/
+function jugaad_patches_product_theme($existing, $type, $theme, $path) {
+  return [
+    'qr_code_block' => [
+      'path' => drupal_get_path('module', 'jugaad_patches_product') . '/templates/block',
+      'variables' => [
+        'qr_code_path' => '',
+      ],
+    ],
+
+    'node__jugaad_patches_store' => [
+      'template' => 'node--jugaad-patches-store',
+      'base hook' => 'node',
+      'path' => drupal_get_path('module', 'jugaad_patches_product') . '/templates/content',
+    ],
+  ];
+}
+

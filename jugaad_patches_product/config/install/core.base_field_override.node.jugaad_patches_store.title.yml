@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.jugaad_patches_store
+id: node.jugaad_patches_store.title
+field_name: title
+entity_type: node
+bundle: jugaad_patches_store
+label: 'Product Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
