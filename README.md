@@ -31,3 +31,24 @@ The block, when placed on any product page, automatically shows the currently di
 9. Your final submission is expected to contain a) Updated code of the module in this repository b) A link to the demo site c) Admin (uid=1) credentials to the demo site 
 
 Wish you the very best!
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**Submission Details:**
+ 1. Updated code of the module in this repository: 
+    - Pushed newly created custom module named as "jugaad_patches_product"
+    - Prerequisite before enabling our custom module
+        - Need to install QR code dependency: 
+            composer require endroid/qr-code
+    - After enabling/ installing our custom module (jugaad_patches_product) will create custom content type named as "Jugaad Patches Store - Product" with required listed fields in the above requirement section
+    - It will also create QR code block & put it into right sidebar section which you can see for node detail page (after adding content for our custom content type: Jugaad Patches Store - Product)
+    - It also contains a basic view to list out all the added products (/products). Currently site home page also routed to this products page.
+ 2. A link to the demo site: 
+    - Home: https://dev-jugaad-patches-store.pantheonsite.io
+    - Product Detail: https://dev-jugaad-patches-store.pantheonsite.io/unicorn-iron-on-patch
+ 3. Admin (uid=1) credentials to the demo site:
+    - Admin Login: https://dev-jugaad-patches-store.pantheonsite.io/user/login
+    - Username: admin
+    - Password: KXMJZp2es2qcJX9

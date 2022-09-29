@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.jugaad_patches_store.body
+    - field.field.node.jugaad_patches_store.field_app_purchase_link
+    - field.field.node.jugaad_patches_store.field_product_image
+    - image.style.medium
+    - node.type.jugaad_patches_store
+  module:
+    - image
+    - text
+    - user
+id: node.jugaad_patches_store.default
+targetEntityType: node
+bundle: jugaad_patches_store
+mode: default
+content:
+  body:
+    type: text_default
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_product_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_app_purchase_link: true

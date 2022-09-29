@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.jugaad_patches_store
+  module:
+    - text
+id: node.jugaad_patches_store.body
+field_name: body
+entity_type: node
+bundle: jugaad_patches_store
+label: 'Product Description'
+description: 'Please add detailed information about your product & its features.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

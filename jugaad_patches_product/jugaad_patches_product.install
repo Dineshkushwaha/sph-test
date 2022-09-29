@@ -1,0 +1,37 @@
+
+<?php
+
+/**
+ * To do additional config changes on installation.
+ */
+
+function jugaad_patches_product_install() {
+    
+    // Set the default home page path.
+    \Drupal::configFactory()
+      ->getEditable('system.site')
+      ->set('page.front', '/products')
+      ->save();
+  }
+
+/**
+ * To remove all content & content type on uninstallation. 
+ */
+function jugaad_patches_product_uninstall() {
+
+  // Delete all nodes of given content type.
+  $storage_handler = \Drupal::entityTypeManager()
+    ->getStorage('node');
+  $nodes = $storage_handler->loadByProperties(['type' => 'jugaad_patches_store']);
+  if(sizeof($nodes) > 0){
+    $storage_handler->delete($nodes);
+  }
+
+  // Delete content type.
+  $content_type = \Drupal::entityTypeManager()
+    ->getStorage('node_type')
+    ->load('jugaad_patches_store');
+    if($content_type != null){
+        $content_type->delete();
+    }
+}
