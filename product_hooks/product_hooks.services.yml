@@ -1,0 +1,3 @@
+services:
+  product_hooks.product_hooks_tools:
+      class: Drupal\product_hooks\Tools

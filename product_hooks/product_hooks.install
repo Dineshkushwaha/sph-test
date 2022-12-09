@@ -1,0 +1,30 @@
+<?php
+
+
+function product_hooks_install(){
+
+    $theme_name = \Drupal::config('system.theme')->get('default');
+    
+    $values = array(
+        'id' => 'qr_block_1',
+        'plugin' => 'qr_block',
+        'region' => 'sidebar',
+        'theme' => $theme_name,
+        'visibility' => array(),
+        'weight' => 100,
+    );
+    $block = \Drupal\block\Entity\Block::create($values);
+    $block->save();
+
+}
+
+
+function product_hooks_uninstall() {
+  $nodes = \Drupal::entityQuery('node')
+      ->condition('type', 'product')
+      ->execute();
+
+  $storage_handler = \Drupal::entityTypeManager()->getStorage('node');
+  $entities = $storage_handler->loadMultiple($nodes);
+  $storage_handler->delete($entities);
+}

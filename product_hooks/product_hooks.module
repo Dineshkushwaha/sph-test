@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function product_hooks_theme() {
+  return [
+    'qr_block' => [
+      'render element' => 'variables',
+      'template' => 'block/qr-block',
+    ],
+    'node__product' => [
+      'template' => 'node/node--product',
+      'base hook' => 'node',
+    ]
+  ];
+}
+
+function product_hooks_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->getEntityTypeId() == 'node' && $entity->getType() == 'product') {
+    
+    $title = str_replace(" ","-",strtolower($entity->getTitle()));
+    $path_alias = \Drupal\path_alias\Entity\PathAlias::create([
+      'path' => '/node/'.$entity->id(),
+      'alias' => '/product/'.$title,
+    ]);
+    $path_alias->save();
+    
+  }
+}
+
+function product_hooks_entity_update(Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->getEntityTypeId() == 'node' && $entity->getType() == 'product') {
+    
+    $title = str_replace(" ","-",strtolower($entity->getTitle()));
+    $path_alias = \Drupal\path_alias\Entity\PathAlias::create([
+      'path' => '/node/'.$entity->id(),
+      'alias' => '/product/'.$title,
+    ]);
+    $path_alias->save();
+
+  }
+}
