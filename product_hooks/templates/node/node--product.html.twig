@@ -1,0 +1,25 @@
+{%
+  set classes = [
+    'node',
+    'node--type-product',
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+ <div class="wrapper">
+  <div class="content">
+      {{ content.field_product_image }}
+      {{ content.field_product_description }}
+  </div>
+ </div>
+</article>
+
+<style>
+  .content{
+    display: flex;
+  }
+  .field--name-field-product-image{
+    margin-left: 0px!important;
+    width: 30%;
+  }
+</style>
+
