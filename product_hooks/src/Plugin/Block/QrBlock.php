@@ -23,14 +23,18 @@ class QrBlock extends BlockBase {
     $tools = \Drupal::service('product_hooks.product_hooks_tools');
     $node = \Drupal::routeMatch()->getParameter('node');
 
-    $qr = $tools->generateQR($node->get('field_product_app_purchase_link')->getString());
+    $build = [];
 
-    $build = [
-      '#theme' => 'qr_block',
-      'data' => [
-        'qr' => $qr->getDataUri(),
-      ]
-    ];
+    if($node != null && $node->get('field_product_app_purchase_link') != null){
+      $qr = $tools->generateQR($node->get('field_product_app_purchase_link')->getString());
+
+      $build = [
+        '#theme' => 'qr_block',
+        'data' => [
+          'qr' => $qr->getDataUri(),
+        ]
+      ];
+    }
     
     return $build;
   }
