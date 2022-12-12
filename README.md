@@ -31,3 +31,7 @@ The block, when placed on any product page, automatically shows the currently di
 9. Your final submission is expected to contain a) Updated code of the module in this repository b) A link to the demo site c) Admin (uid=1) credentials to the demo site 
 
 Wish you the very best!
+
+Thank you, Please find the demo site Credentials.
+    - URL: https://dev-proqr.pantheonsite.io/
+    - Creds: admin/admin
