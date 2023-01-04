@@ -1,0 +1,25 @@
+<?php
+
+use Drupal\Core\Render\Markup;
+
+
+/**
+ * Implements hook_theme().
+ */
+function drupal_products_theme($existing, $type, $theme, $path) {
+    return [
+      'qr_code_block' => [
+        'variables' => ['contents' => []],
+      ],
+    ];
+}
+
+// /**
+//  * Implements template_preprocess_node().
+//  */
+// function drupal_products_preprocess_node(&$variables){
+//    $html = 
+//    $variables['content']['field_app_purchase_link'][0] = t('test');
+//     // dump($variables);
+//     // // die();
+// }
