@@ -7,7 +7,7 @@
 #REQUIREMENTS:
 
 > Install endroid/qr-code package:
->   Run *composer require endroid/qr-code-bundle* on project root directory.
+>   Run * composer require nitesh624/product_feature @dev* on project root directory. It will take care of install module and required library
 
 #INSTALLATION:
 
