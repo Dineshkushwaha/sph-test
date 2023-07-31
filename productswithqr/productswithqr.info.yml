@@ -1,0 +1,6 @@
+name: QR for Products
+type: module
+description: 'Add products QR for purchase.'
+core_version_requirement: ^8.9 || ^9
+dependencies:
+  - node
