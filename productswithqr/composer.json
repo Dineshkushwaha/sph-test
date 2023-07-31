@@ -1,0 +1,16 @@
+{
+    "name": "drupal/productswithqr",
+    "description": "The dependecies for custom module productwithqr",
+    "type": "drupal-custom-module",
+    "authors": [
+        {
+            "name": "vivek bhadouria",
+            "email": "vivekbhadoria89@gmail.com"
+        }
+    ],
+    "require": {
+        "chillerlan/php-qrcode": "^4.3"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
