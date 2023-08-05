@@ -1,0 +1,14 @@
+{
+    "name": "sirisha/jugaad_custom",
+    "description": "composer file  for Jugaad Patches Pvt Ltd",
+    "type": "drupal-module",
+    "require": {
+        "endroid/qr-code": "^4.5"
+    },
+    "authors": [
+        {
+            "name": "Sirisha Singampalli",
+            "email": "siri.singampalli@gmail.com"
+        }
+    ]
+}

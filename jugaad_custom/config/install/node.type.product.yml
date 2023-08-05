@@ -1,0 +1,20 @@
+uuid: c53f3dce-cb51-48c9-bc86-6c44ebc833ad
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: 4ZqxDpuFe3XMyRbaHH9uayqDh5i6Auv5Z3a4543x_1I
+name: Product
+type: product
+description: 'Creating products for Jugaad Patches pvt ltd'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true
