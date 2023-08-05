@@ -1,0 +1,21 @@
+uuid: 07cbd3cd-452f-451b-9497-2e67283d3a7b
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+_core:
+  default_config_hash: 1O4c2bL8girZy8QinD4KOZCo2B_1Q7_y4ae7R53YAKk
+id: node.field_app_purchase_link
+field_name: field_app_purchase_link
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

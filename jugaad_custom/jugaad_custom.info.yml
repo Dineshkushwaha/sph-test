@@ -1,0 +1,4 @@
+name: Juggad Custom
+description: Custom module for Jugaad Patches Pvt. Ltd
+type: module
+core_version_requirement: ^9 || ^10
